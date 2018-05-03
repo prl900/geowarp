@@ -3,6 +3,7 @@ package geowarp
 import (
 	"errors"
 	"github.com/prl900/proj4go"
+	"github.com/terrascope/scimage"
 	"image"
 )
 
@@ -19,7 +20,6 @@ type Raster interface {
 
 var OutOfBoundsError = errors.New("out of bounds")
 
-// TODO: Hack here to create a new type with metadata
 type GrayGeoRaster struct {
 	*image.Gray
 	Proj4    string
@@ -74,7 +74,7 @@ func (gr *GrayGeoRaster) Warp(dst GrayGeoRaster) error {
 }
 
 type GrayGeoRaster16 struct {
-	*image.Gray16
+	*scimage.GrayS16
 	Proj4    string
 	GeoTrans []float64
 	NoData   float64
