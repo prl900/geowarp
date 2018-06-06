@@ -2,7 +2,6 @@ package geowarp
 
 import (
 	"errors"
-	"github.com/terrascope/gocog"
 	"github.com/terrascope/proj4go"
 	"github.com/terrascope/scimage"
 )
